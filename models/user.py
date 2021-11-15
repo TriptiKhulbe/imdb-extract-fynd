@@ -16,7 +16,7 @@ from models import db
 class User(db.Model):
     __tablename__ = "users"
 
-    id = Column(Integer, Sequence("user_id_seq"), primary_key=True)
+    id = Column(Integer, primary_key=True)
     first_name = Column(String(80), nullable=False)
     last_name = Column(String(80), nullable=False)
     email = Column(String(120), unique=True, nullable=False)
@@ -68,7 +68,7 @@ class User(db.Model):
 class Role(db.Model):
     __tablename__ = "roles"
 
-    id = Column(Integer, Sequence("user_role_seq"), primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
     label = Column(String(80), nullable=False)
 
@@ -108,7 +108,7 @@ class UsersRoles(db.Model):
 class Permission(db.Model):
     __tablename__ = "permissions"
 
-    id = Column(Integer, Sequence("permissions_seq"), primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
 
     def __init__(self, name: str):
