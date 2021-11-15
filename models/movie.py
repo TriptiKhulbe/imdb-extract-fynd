@@ -15,7 +15,7 @@ from models import db
 class Movie(db.Model):
     __tablename__ = "movies"
 
-    id = Column(Integer, Sequence("user_id_seq"), primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(80), nullable=False)
     imdb_score = Column(Float, nullable=False)
     director = Column(String(120), nullable=False)
@@ -62,7 +62,7 @@ class Movie(db.Model):
 class Genre(db.Model):
     __tablename__ = "genres"
 
-    id = Column(Integer, Sequence("genre_seq"), primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(80), unique=True, nullable=False)
 
     def __init__(self, name, *args, **kwargs):
